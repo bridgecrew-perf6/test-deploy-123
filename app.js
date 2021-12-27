@@ -4,7 +4,6 @@ const seedAuthor = require("./author_seed");
 const Book = require("./models/bookAndAuthor").Book;
 const Author = require("./models/bookAndAuthor").Author;
 const authRouter = require("./routes/authRoute");
-const author = require("./routes/author");
 const express = require("express");
 const { requireAuth, checkAuthor } = require("./middleware/authMiddleware");
 const path = require("path");
@@ -23,7 +22,6 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 app.use(authRouter);
-app.use(author);
 app.use(express.static("frontend/build"));
 
 
